@@ -15,5 +15,18 @@ module "iam-test" {
 
   actions = [
     "s3:*",
+    "ec2:*"
   ]
+}
+
+output "user" {
+  value = "${module.iam-test.user_name}"
+}
+
+output "user_arn" {
+  value = "${module.iam-test.user_arn}"
+}
+
+output "iam_user_policy" {
+  value = "${module.iam-test.user_policy}"
 }
